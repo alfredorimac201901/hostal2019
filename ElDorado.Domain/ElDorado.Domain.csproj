@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22451DDD-5AEE-47B9-8FCE-A7C8AA9252AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ElDorado.Domain</RootNamespace>
+    <AssemblyName>ElDorado.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClienteDomain.cs" />
+    <Compile Include="TipoDocumentoDomain.cs" />
+    <Compile Include="TipoComprobanteDomain.cs" />
+    <Compile Include="DetalleVentaDomain.cs" />
+    <Compile Include="EmpleadoDomain.cs" />
+    <Compile Include="EstadoHabitacionDomain.cs" />
+    <Compile Include="HabitacionDomain.cs" />
+    <Compile Include="TipoEmpleadoDomain.cs" />
+    <Compile Include="TipoHabitacionDomain.cs" />
+    <Compile Include="VentaDomain.cs" />
+    <Compile Include="TipoPagoDomain.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ElDorado.Data.Repository.Interface\ElDorado.Data.Repository.Interface.csproj">
+      <Project>{57AF97C0-7C7A-4641-BEDA-33989A62B315}</Project>
+      <Name>ElDorado.Data.Repository.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElDorado.Data.Repository\ElDorado.Data.Repository.csproj">
+      <Project>{D4C25362-3BF0-46EF-B6B2-1034E4DA61FA}</Project>
+      <Name>ElDorado.Data.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElDorado.Domain.Interface\ElDorado.Domain.Interface.csproj">
+      <Project>{C56D4A77-3CFF-4A13-9B56-DE2BDE1BA85F}</Project>
+      <Name>ElDorado.Domain.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElDorado.Entities.Base\ElDorado.Entities.Base.csproj">
+      <Project>{6A7F1011-46E7-438D-88E5-18B92D11163E}</Project>
+      <Name>ElDorado.Entities.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

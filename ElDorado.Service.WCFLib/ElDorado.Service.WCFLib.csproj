@@ -1,0 +1,106 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F76926DA-01CD-42EE-A722-D8913EB083F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ElDorado.Service.WCFLib</RootNamespace>
+    <AssemblyName>ElDorado.Service.WCFLib</AssemblyName>
+    <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <XsdCodeGenEnabled>True</XsdCodeGenEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MantenimientoService.cs" />
+    <Compile Include="MantenimientoService\MantenimientoCliente.cs" />
+    <Compile Include="MantenimientoService\MantenimientoTipoComprobante.cs" />
+    <Compile Include="MantenimientoService\MantenimientoDetalleVenta.cs" />
+    <Compile Include="MantenimientoService\MantenimientoEmpleado.cs" />
+    <Compile Include="MantenimientoService\MantenimientoEstadpHabitacion.cs" />
+    <Compile Include="MantenimientoService\MantenimientoHabitacion.cs" />
+    <Compile Include="MantenimientoService\MantenimientoTipoEmpleado.cs" />
+    <Compile Include="MantenimientoService\MantenimientoTipoHabitacion.cs" />
+    <Compile Include="MantenimientoService\MantenimientoTipoDocumento.cs" />
+    <Compile Include="MantenimientoService\MantenimientoVenta.cs" />
+    <Compile Include="MantenimientoService\MantenimientoTipoPago.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ElDorado.Domain.Interface\ElDorado.Domain.Interface.csproj">
+      <Project>{C56D4A77-3CFF-4A13-9B56-DE2BDE1BA85F}</Project>
+      <Name>ElDorado.Domain.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElDorado.Domain\ElDorado.Domain.csproj">
+      <Project>{22451DDD-5AEE-47B9-8FCE-A7C8AA9252AB}</Project>
+      <Name>ElDorado.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElDorado.Entities.Base\ElDorado.Entities.Base.csproj">
+      <Project>{6A7F1011-46E7-438D-88E5-18B92D11163E}</Project>
+      <Name>ElDorado.Entities.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElDorado.Service.WCFLib.Interface\ElDorado.Service.WCFLib.Interface.csproj">
+      <Project>{15B07D47-7821-4B4B-83A7-72D8F623C799}</Project>
+      <Name>ElDorado.Service.WCFLib.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VSToolsPath Condition="'$(VSToolsPath)' == '' and '$(VisualStudioVersion)' != '' and '$(VisualStudioVersion)' != '11.0'">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio</VSToolsPath>
+    <WcfServiceModelTargetPath>$(VSToolsPath)\WCF</WcfServiceModelTargetPath>
+  </PropertyGroup>
+  <Import Project="$(WcfServiceModelTargetPath)\Microsoft.VisualStudio.ServiceModel.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
+        <WcfProjectProperties>
+          <AutoStart>True</AutoStart>
+        </WcfProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

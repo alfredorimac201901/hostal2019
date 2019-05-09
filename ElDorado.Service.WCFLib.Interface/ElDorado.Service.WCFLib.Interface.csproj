@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{15B07D47-7821-4B4B-83A7-72D8F623C799}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ElDorado.Service.WCFLib.Interface</RootNamespace>
+    <AssemblyName>ElDorado.Service.WCFLib.Interface</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IMantenimientoService.cs" />
+    <Compile Include="IMantenimientosService\IMantenimientoCliente.cs" />
+    <Compile Include="IMantenimientosService\IMantenimientoTipoComprobante.cs" />
+    <Compile Include="IMantenimientosService\IMantenimientoDetalleVenta.cs" />
+    <Compile Include="IMantenimientosService\IMantenimientoEmpleado.cs" />
+    <Compile Include="IMantenimientosService\IMantenimientoEstadoHabitacion.cs" />
+    <Compile Include="IMantenimientosService\IMantenimientoHabitacion.cs" />
+    <Compile Include="IMantenimientosService\IMantenimientoTipoEmpleado.cs" />
+    <Compile Include="IMantenimientosService\IMantenimientoTipoHabitacion.cs" />
+    <Compile Include="IMantenimientosService\IMantenimientoTipoDocumento.cs" />
+    <Compile Include="IMantenimientosService\IMantenimientoVenta.cs" />
+    <Compile Include="IMantenimientosService\IMantenimientoTipoPago.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ElDorado.Entities.Base\ElDorado.Entities.Base.csproj">
+      <Project>{6A7F1011-46E7-438D-88E5-18B92D11163E}</Project>
+      <Name>ElDorado.Entities.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
